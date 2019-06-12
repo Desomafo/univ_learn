@@ -1,0 +1,86 @@
+*:focus {outline: none;} /*отмена стандартных стилей input*/
+.task {
+	margin-top: 20px;
+}
+
+.first, .second, .fith {
+	margin: auto; /*указывает, что размер отступов будет автоматически рассчитан браузером*/
+	font: 18px "Lucida Grande"; /*установка шрифта*/
+	width: 325px; /*установка ширины блочных элементов first и second*/
+	padding: 10px; /*установка значения полей вокруг содержимого элементов first и second*/
+	border-radius: 15px; /*установка радиуса скругления уголков рамки*/
+	box-shadow: 0px 0px 5px 5px #ccc; /*добавление тени к эелементам*/
+}
+
+.blocktest {
+	margin: auto; /*указывает, что размер отступов будет автоматически рассчитан браузером*/
+	font: 18px "Lucida Grande"; /*установка шрифта*/
+	width: 500px; /*установка ширины блочных элементов first и second*/
+	padding: 10px; /*установка значения полей вокруг содержимого элементов first и second*/
+	border-radius: 15px; /*установка радиуса скругления уголков рамки*/
+	box-shadow: 0px 0px 5px 5px #ccc; /*добавление тени к эелементам*/
+}
+
+.third, .fourth {
+	margin: auto;
+	font: 18px "Lucida Grande";
+	width: 500px;
+	padding: 10px;
+	border-radius: 15px; 
+	box-shadow: 0px 0px 5px 5px #ccc;
+}
+
+.test_form input, .test_form text {
+	text-align: center; /*установка горизонтельного выравнивание текста по центру в пределах элемент*/
+	font: 12px "Lucida Grande", "Lucida Sans";
+	border:1px solid #aaa; /*установка толщины, стиля и цвета границы вокруг элемента*/
+	box-shadow: 0px 0px 3px #ccc, 0 3px 5px #eee inset;
+	border-radius:1px;
+}
+
+.test_form input:focus, .test_form text:focus {
+	border:1px solid #1746EE;
+	box-shadow: 0 0 4px #aaa;
+}
+
+.buttonCheck, .buttonNext, .buttonPrev {
+	width: 150px;
+	height: 50px;
+	display: inline-block;
+   	background: -moz-linear-gradient(#eee, #ccc); /*Firefox*/
+   	background: -webkit-gradient(linear, 0 0, 0 100%, from(#eee), to(#ccc)); /*Chrome, Safari*/
+   	margin:20px auto;
+	text-align: center;
+	cursor: pointer;
+}
+
+.Cplus, .Pascal {
+	margin: auto;
+	border:1px solid #aaa; /*установка толщины, стиля и цвета границы вокруг элемента*/
+	box-shadow: 0px 0px 3px #ccc, 0 3px 5px #eee inset;
+	border-radius:1px;
+	display: inline-block;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    box-shadow: 0px 0px 5px 5px #ccc;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.task {display: none;}
+.testfirst {display: none;}
+.testfirst.visible {display: block;}
+
+.blocktest {display: none;}
+.blocktest.visible {display: block;}
+
+.testsecond {display: none;}
+.testsecond.visible {display: block;}
+
+.intro-text {display: none;}
+.practice-usage {display: none;}
+#block-test {display: none;}
+#theory {display: none;}
+

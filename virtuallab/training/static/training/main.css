@@ -1,0 +1,51 @@
+*:focus {outline: none;} /*отмена стандартных стилей input*/
+
+.first, .second {
+	margin: auto;
+	font: 18px "Lucida Grande";
+	width: 325px;
+	padding: 10px;
+	border-radius: 15px; 
+	box-shadow: 0px 0px 5px 5px #ccc;
+}
+
+.third, .fourth {
+	margin: auto;
+	font: 18px "Lucida Grande";
+	width: 500px;
+	padding: 10px;
+	border-radius: 15px; 
+	box-shadow: 0px 0px 5px 5px #ccc;
+}
+
+.test_form input, .test_form text {
+	text-align: center;
+	font: 12px "Lucida Grande", "Lucida Sans";
+	border:1px solid #aaa;
+	box-shadow: 0px 0px 3px #ccc, 0 3px 5px #eee inset;
+	border-radius:1px;
+}
+
+.test_form input:focus, .test_form text:focus {
+	border:1px solid #1746EE;
+	box-shadow: 0 0 4px #aaa;
+}
+
+.buttonCheck {
+	width: 150px;
+	height: 50px;
+	display:block;
+   	background: -moz-linear-gradient(#eee, #ccc); /*Firefox*/
+   	background: -webkit-gradient(linear, 0 0, 0 100%, from(#eee), to(#ccc)); /*Chrome, Safari*/
+   	margin:20px auto;
+	text-align: center;
+}
+
+.practice {
+	display: none;
+}
+
+.practice-button {
+	display: none;
+}
+

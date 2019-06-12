@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load bootstrap3 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+
+        {% block links %}
+        {% endblock links %}
+
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'training/base.css' %}">
+
+        {% block title %}
+            <title>Virtual lab</title>
+        {% endblock title %}
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+          <div class="container-fluid" id="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="http://www.rusoil.net">Ufa State Petrolium Technological University</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'training:intro' %}">Введение</a></li>
+                <li><a href="{% url 'training:theory_list' %}">Теория</a></li>
+                <li><a href="{% url 'training:practice_list' %}">Практика</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+
+        <div class="container-fluid copy-banner">
+            <div class="banner-header">
+                {% block header %}{% endblock %}
+            </div>
+            <div class="banner-image"></div>
+        </div>
+
+
+        <div class="container-fluid content">
+            <div class=" container-fluid main">
+                {% block content %}
+                {% endblock content %}
+            </div>
+            <div class="container-fluid sidebar">
+                <h2>Содержание</h2>
+
+            </div>
+
+            <div class="sidebar-image"></div>
+        </div>
+
+        <div class="container-fluid footer">
+            <h3>Разработчики:</h3>
+            <h4>Студенты группы БПОи-16</h4>
+            <ul>
+                <li><span class="glyphicon glyphicon-user"></span>  Камиль Камалов</li>
+                <li><span class="glyphicon glyphicon-user"></span>  Александра Матвеева</li>
+                <li><span class="glyphicon glyphicon-user"></span>  Альбина Яхина</li>
+            </ul>
+        </div>
+    </body>
+</html>

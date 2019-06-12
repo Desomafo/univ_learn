@@ -1,0 +1,13 @@
+{% extends "training/base.html" %}
+
+{% block header %}
+    <h1><a href="{% url 'training:theory_list' %}" style="color: inherit;">Теория</a></h1>
+{% endblock header %}
+
+{% block content %}
+    <h2>{{ article.name }}</h2>
+    <h3>Описание</h3>
+    {{ article.description|safe }}
+    <h3>Примеры</h3>
+    {{ article.examples|safe }}
+{% endblock content %}

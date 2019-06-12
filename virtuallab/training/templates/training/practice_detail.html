@@ -1,0 +1,678 @@
+{% extends 'training/base.html' %}
+
+{% block links %}
+    {% load static %}
+    <script src="{% static 'training/blockConstructor.js' %}" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'training/test1.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'training/main.css' %}">
+    <link rel="stylesheet" type="text/javascript" href="{% static 'training/script.js' %}">
+{% endblock links %}
+
+{% block header %}
+    <h1><a href="{% url 'training:practice_list' %}">Практика</a></h1>
+{% endblock header %}
+    
+{% block content %}
+    {% if practice.id == 1 %}
+        <h3>Выберите язык программирования</h3>
+        <div class="Cplus" onclick="randCplusInitialization()" text-align='center'>С++</div> 
+        <div class="Pascal" onclick="randPascalInitialization()" text-align='center'>Pascal</div> 
+        <div class="task"><b>Задание:</b> Дан текст программы, заполнить пропуски в соответствии с поставленной задачей.</div>
+        <div class="test1" align="left"> <!-- задания по С++-->
+            <div  class="testfirst"> <!-- 1 задание-->
+                <p><b>№1.</b> Программа должна выводить на экран числа от 1 до 100 (организовать цикл for).</p>
+                <form name="test1" class="test_form"> <!-- создание формы на веб-странице для 1 задания-->
+                    <div class="first">
+                        #include &lt;iostream&gt; <br>
+                        using namespace std; <br>
+                        int main(){ <br>
+                        &#160; setlocale(0, ""); <br>
+                        &#160; <input name="q1" type="text" onkeyup="testJump(this)" value="" style="width: 35px; height: 15px;" maxlength="3" size="3"> <!--создание элемента формы для ввода данных с клавиатуры и вызовом функции перехода на следующий элемент-->
+                        (int i=                     
+                        <input name="q2" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="1" size="1">
+                        ; i < =
+                        <input name="q3" type="text" onkeyup="testJump(this)" value="" style="width: 35px; height: 15px;" maxlength="3" size="1">
+                        ; i++){ <br>
+                        <p style="text-indent: 20px; margin: 0px"> cout &lt;&lt; i &lt;&lt;" "; <br>
+                        &#160; } <br>
+                        &#160; return 0; <br>}
+                    </div>  
+                    <center> 
+                        <input name="check1" class="buttonCheck" onclick="answers1(this.form)" type="button" value="Проверить" style="font: 18px 'Lucida Sans'; border-radius: 2px; "> <!--создание кнопки для отправки введенных значений-->
+                        <input class="buttonNext" onclick="randCplus()" type="button" value="Далее" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                    </center>
+                </form>
+            </div>
+            <div class="testfirst"> <!-- 2 задание -->
+                <p><b>№2.</b> Программа должна выводить количество четных цифр данного натурального числа. (организовать цикл while).</p>
+                <form name="test2" class="test_form"> <!-- создание формы на веб-странице для 2 задания-->
+                    <div class="second">
+                        #include &lt;iostream&gt; <br>
+                        using namespace std; <br>
+                        int main(){ <br>
+                        &#160; setlocale(0, ""); <br>
+                        &#160; int n, count; <br>
+                        &#160; cout &lt;&lt; "input <input name="q4" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="1" size="1"> 
+                        "; <br>
+                        &#160; cin &gt;&gt; <input name="q5" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="1" size="1"> &gt;&gt;; <br>
+                        &#160; while (n &gt; 0) { <br>
+                        &#160; if (((n % 10) % 2) == <input name="q6" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="1" size="1">)<br>
+                        <p style="text-indent: 20px; margin: 0px"> count <input name="q7" type="text" onkeyup="testJump(this)" value="" style="width: 30px; height: 15px;" maxlength="2" size="2">;
+                        <p style="text-indent: 20px; margin: 0px">n/=10; <br>
+                        &#160; } <br>
+                        &#160; cout &lt;&lt; "answer:" &lt;&lt; <input name="q8" type="text" onkeyup="testJump(this)" value="" style="width: 43px; height: 15px;" maxlength="5" size="5"> &lt;&lt; endl; <br>
+                        &#160; return 0; <br>
+                        }
+                    </div>
+                    <center>
+                        <input name="check2" class="buttonCheck" onclick="answers2(this.form)" type="button" value="Проверить" style="font: 18px 'Lucida Sans'; border-radius: 2px;"> 
+                        <input class="buttonNext" onclick="randCplus()" type="button" value="Далее" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                    </center>
+                </form>
+            </div>
+            <div class="testfirst">
+                <p><b>№3.</b> Программа должна вычислять среднее арифметическое значение последовательности положительных чисел, введенных с клавиатуры. (организовать цикл do-while).</p>
+                <form name="test3" class="test_form"> <!-- создание формы на веб-странице для 3 задания-->
+                    <div class="third"> 
+                        #include &lt;iostream&gt; <br>
+                        using namespace std; <br>
+                        int main(){ <br>
+                        &#160; setlocale(0, ""); <br>
+                        &#160; int i, n; <br>
+                        &#160; <input name="q9" type="text" onkeyup="testJump(this)" value="" style="width: 45px; height: 15px;" maxlength="6" size="6"> sr_arifm = 0, x = 0, y = 0;
+                        &#160; cout &lt;&lt; "Вводите числа (для окончания ввода введите 0)";<br>
+                        &#160; do {<br>
+                        <p style="text-indent: 20px; margin: 0px"> cin &gt;&gt; n;
+                        <p style="text-indent: 20px; margin: 0px"> if (n <input name="q10" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="2" size="2"> 0) {
+                        <p style="text-indent: 30px; margin: 0px"> x++; 
+                        <p style="text-indent: 30px; margin: 0px"> y+=n; 
+                        <p style="text-indent: 20px; margin: 0px"> }
+                        while (n <input name="q11" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="2" size="2"> 0); <br>
+                        &#160; sr_arifm = <input name="q12" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="1" size="1"> / <input name="q13" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="1" size="1">;<br>
+                        &#160; cout &lt;&lt; "Среднее арифметическое " &lt;&lt; sr_arifm &lt;&lt; endl; <br>
+                        &#160; system ("pause");<br>
+                        &#160; return 0; <br>
+                        }
+                    </div>
+                    <center>
+                        <input name="check3" class="buttonCheck" onclick="answers3(this.form)" type="button" value="Проверить" style="font: 18px 'Lucida Sans'; border-radius: 2px;"> 
+                        <input class="buttonNext" onclick="randCplus()" type="button" value="Далее" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                    </center>
+                </form>
+            </div>
+            <div class="testfirst"> 
+                <p><b>№4.</b> Программа должна вычислять факториал числа, заданного с клавиатуры. (организовать цикл for).</p>
+                <form name="test4" class="test_form"> <!-- создание формы на веб-странице для 4 задания-->
+                    <div class="fourth"> 
+                        #include &lt;iostream&gt; <br>
+                        using namespace std; <br>
+                        int main(){ <br>
+                        &#160; setlocale(0, ""); <br>
+                        &#160; int i, n, fact = <input name="q14" type="text" onkeyup="testJump(this)" value="" style="width: 30px; height: 15px;" maxlength="1" size="1">; <br>
+                        &#160; cout <input name="q15" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="2" size="2"> "N = "; <br>
+                        &#160; cin <input name="q16" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="2" size="2"> n;<br>
+                        &#160; for (i = 1; <input name="q17" type="text" onkeyup="testJump(this)" value="" style="width: 35px; height: 15px;" maxlength="4" size="4">; i++) {
+                        <p style="text-indent: 20px; margin: 0px"> fact*=i; <br>
+                        &#160; } <br>
+                        &#160; cout <input name="q18" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="2" size="2"> "Факториал числа " <input name="q19" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="2" size="2"> n <input name="q20" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="2" size="2"> "равен: " <input name="q21" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="2" size="2"> fact;<br>
+                        &#160; system ("pause");<br>
+                        &#160; return 0; <br>
+                        }
+                    </div>
+                    <center>
+                        <input name="check4" class="buttonCheck" onclick="answers4(this.form)" type="button" value="Проверить" style="font: 18px 'Lucida Sans'; border-radius: 2px;"> 
+                        <input class="buttonNext" onclick="randCplus()" type="button" value="Далее" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                    </center>
+                </form>
+            </div>
+            <div class="testfirst">
+                <p><b>№5.</b> Программа должна находить максимальное число среди положительных чисел, введенных с клавиатуры (организовать цикл do-while).</p>
+                <form name="test5" class="test_form"> <!-- создание формы на веб-странице для 4 задания-->
+                    <div class="fith"> 
+                        #include &lt;iostream&gt; <br>
+                        using namespace std; <br>
+                        int main(){ <br>
+                        &#160; setlocale(0, ""); <br>
+                        &#160; int n, t = 0, max = 0; <br>
+                        &#160; cout &lt;&lt; "Вводите числа (для окончания ввода введите 0)"; <br>
+                        &#160; <input name="q22" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="2" size="2"> n; {<br>
+                        &#160; cin &gt;&gt; n; <br>
+                        &#160; if (n <input name="q23" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="1" size="1"> max) <br>
+                        &#160; <input name="q24" type="text" onkeyup="testJump(this)" value="" style="width: 50px; height: 15px;" maxlength="6" size="6"> <br>
+                        &#160; } <br>
+                        &#160; <input name="q25" type="text" onkeyup="testJump(this)" value="" style="width: 45px; height: 15px;" maxlength="5" size="5"> (n!=0); <br>
+                        &#160; cout &lt;&lt; "Максимальное число равно: " &lt;&lt; max &lt;&lt; endl; <br>
+                        &#160; system ("pause");<br>
+                        &#160; return 0; <br>
+                        }
+                    </div>
+                    <center>
+                        <input name="check5" class="buttonCheck" onclick="answers5(this.form)" type="button" value="Проверить" style="font: 18px 'Lucida Sans'; border-radius: 2px; "> 
+                        <input class="buttonNext" onclick="randCplus()" type="button" value="Далее" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                    </center>
+                </form>
+            </div>
+        </div>
+
+        <div class="test2" align="left"> 
+            <div  class="testsecond">
+                <p><b>Задание №1.</b> Программа должна выводить на экран числа от 1 до числа, введённого с клавиатуры (организовать цикл while).</p>
+                <form name="Ptest1" class="test_form"> 
+                    <div class="first">
+                        var <br>
+                        &#160; i, N: integer; <br>
+                        begin <br>
+                        &#160; i:=  <input name="r1" type="text" onkeyup="testJump(this)" value="" style="width: 25px; height: 15px;" maxlength="1" size="1"> ;<br>
+                        &#160; readln (N); <br>
+                        &#160; <input name="r2" type="text" onkeyup="testJump(this)" value="" style="width: 45px; height: 15px;" maxlength="5" size="5"> i < = N <input name="r3" type="text" onkeyup="testJump(this)" value="" style="width: 45px; height: 15px;" maxlength="2" size="2"> <br>
+                        &#160; begin <br>
+                        <p style="text-indent: 20px; margin: 0px"> write(i, ' ');
+                        <p style="text-indent: 20px; margin: 0px">Inc(i); <br>
+                        &#160;<input name="r4" type="text" onkeyup="testJump(this)" value="" style="width: 45px; height: 15px;" maxlength="3" size="3"> ; <br>
+                        end. <br>
+                    </div>
+                    <center>
+                        <input name="Pcheck1" class="buttonCheck" onclick="Panswers1(this.form)" type="button" value="Проверить" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                        <input class="buttonNext" onclick="randPascal()" type="button" value="Далее" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                    </center>
+                </form>
+            </div>  
+            <div  class="testsecond">
+                <p><b>Задание №2.</b> Программа должна выводить на экран число K N раз (организовать цикл for).</p>
+                <form name="Ptest2" class="test_form"> 
+                    <div class="second">
+                        program second;<br>
+                        var <br>
+                        &#160; K, N, i: integer; <br>
+                        begin <br>
+                        &#160; <input name="r5" type="text" onkeyup="testJump(this)" value="" style="width: 45px; height: 15px;" maxlength="4" size="4"> (K, N);<br>
+                        &#160; <input name="r6" type="text" onkeyup="testJump(this)" value="" style="width: 40px; height: 15px;" maxlength="3" size="3"> i to N <input name="r7" type="text" onkeyup="testJump(this)" value="" style="width: 35px; height: 15px;" maxlength="2" size="2"> write (K, ' '); <br>
+                            end. <br>
+                    </div>
+                    <center>
+                        <input name="Pcheck2" class="buttonCheck" onclick="Panswers2(this.form)" type="button" value="Проверить" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                        <input class="buttonNext" onclick="randPascal()" type="button" value="Далее" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                    </center>
+                </form>
+            </div>  
+            <div  class="testsecond">
+                <p><b>Задание №3.</b> Программа должна подсчитывать сумму чисел, введённых с клавиатуры. (организовать цикл repeat-until)</p>
+                <form name="Ptest3" class="test_form"> 
+                    <div class="first"> 
+                        program third;<br>
+                        var <br>
+                        &#160; a, sum: integer; <br>
+                        begin <br>
+                        &#160; sum:=0; <br>
+                        &#160; a:=0; <br>
+                        &#160; <input name="r8" type="text" onkeyup="testJump(this)" value="" style="width: 45px; height: 15px;" maxlength="6" size="6"> <br>
+                        &#160; sum:= <input name="r9" type="text" onkeyup="testJump(this)" value="" style="width: 40px; height: 15px;" maxlength="5" size="5">; <br>
+                        &#160; write ('Введите число:'); <br>
+                        &#160; readln (A); <br>
+                        &#160; <input name="r10" type="text" onkeyup="testJump(this)" value="" style="width: 40px; height: 15px;" maxlength="5" size="5"> A &lt; 0; <br>
+                        &#160; writeln ('Сумма чисел = ',sum:5:3); <br>
+                        end. <br>   
+                    </div>  
+                    <center>
+                        <input name="Pcheck3" class="buttonCheck" onclick="Panswers3(this.form)" type="button" value="Проверить" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                        <input class="buttonNext" onclick="randPascal()" type="button" value="Далее" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                    </center>
+                </form>
+            </div>
+            <div  class="testsecond">
+                <p><b>Задание №4.</b> Программа должна вывести на экран ряд чисел Фибоначчи, состоящий из n элементов. (организовать цикл for)</p>  
+                <form name="Ptest4" class="test_form"> 
+                    <div class="first"> 
+                        program fourth;<br>
+                        var <br>
+                        &#160; a, b, c, i, n: integer; <br>
+                        begin <br>
+                        &#160; write ('n = '); <br>
+                        &#160; readln (n); <br>
+                        &#160; a := 0; <br>
+                        &#160; write(a,' ');
+                        &#160; b := 1; <br>
+                        &#160; write(b,' '); <br>
+                        &#160; <input name="r11" type="text" onkeyup="testJump(this)" value="" style="width: 40px; height: 15px;" maxlength="3" size="3"> i:=3 <input name="r12" type="text" onkeyup="testJump(this)" value="" style="width: 35px; height: 15px;" maxlength="2" size="2"> n <input name="r13" type="text" onkeyup="testJump(this)" value="" style="width: 35px; height: 15px;" maxlength="2" size="2"> begin <br>
+                        <p style="text-indent: 20px; margin: 0px">write (a+b, ' '); 
+                        <p style="text-indent: 20px; margin: 0px">c := b; 
+                        <p style="text-indent: 20px; margin: 0px">b := a + b;
+                        <p style="text-indent: 20px; margin: 0px">a := c <br>
+                        &#160; end; <br>
+                        end. <br>   
+                    </div>  
+                    <center>
+                        <input name="Pcheck4" class="buttonCheck" onclick="Panswers4(this.form)" type="button" value="Проверить" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">    
+                        <input class="buttonNext" onclick="randPascal()" type="button" value="Далее" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                    </center>   
+                </form>
+            </div>
+            <div  class="testsecond">
+                <p><b>Задание №5.</b> Из натурального числа удалить заданную цифру. Число и цифру вводить с клавиатуры. Например, задано число 5683. Требуется удалить из него цифру 8. Получится число 563.</p>    
+                <form name="Ptest5" class="test_form"> 
+                    <div class="first"> 
+                        program fith;<br>
+                        var
+                        &#160;a, b: longint; <br>
+                        &#160;n, m: byte; <br>
+                        begin <br>
+                        &#160;readln(a); <br>
+                        &#160;readln(n); <br>
+                        &#160;b := 0; <br>
+                        &#160;while a > 0 do begin <br>
+                        <p style="text-indent: 20px; margin: 0px">m := a <input name="r13" type="text" onkeyup="testJump(this)" value="" style="width: 40px; height: 15px;" maxlength="3" size="3"> 10;
+                        <p style="text-indent: 20px; margin: 0px">if m &lt;&gt; n then
+                        <p style="text-indent: 30px; margin: 0px">b := b * 10 + m;
+                        <p style="text-indent: 30px; margin: 0px">a := a <input name="r14" type="text" onkeyup="testJump(this)" value="" style="width: 40px; height: 15px;" maxlength="3" size="3"> 10;
+                        &#160;end; <br>
+                        &#160;while b > 0 do begin <br>
+                        <p style="text-indent: 20px; margin: 0px">a := a * 10 + b <input name="r15" type="text" onkeyup="testJump(this)" value="" style="width: 40px; height: 15px;" maxlength="3" size="3"> 10;
+                        <p style="text-indent: 20px; margin: 0px">b := b <input name="r16" type="text" onkeyup="testJump(this)" value="" style="width: 40px; height: 15px;" maxlength="3" size="3"> 10; <br>
+                        &#160;end; <br>
+                        &#160;writeln(a); <br>
+                        end.
+                    </div>  
+                    <center>
+                        <input name="Pcheck5" class="buttonCheck" onclick="Panswers5(this.form)" type="button" value="Проверить" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">    
+                        <input class="buttonNext" onclick="randPascal()" type="button" value="Далее" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                    </center>   
+                </form>
+            </div>  
+            <div  class="testsecond">
+                <p><b>Задание №6.</b> Найти сумму первой и последней цифр любого целого положительного числа.</p>   
+                <form name="Ptest6" class="test_form"> 
+                    <div class="first"> 
+                        program sixth;<br>
+                        var
+                        &#160;a, b, sum, n: longint; <br>
+                        begin <br>
+                        &#160;readln(n); <br>
+                        &#160;a := n <input name="r17" type="text" onkeyup="testJump(this)" value="" style="width: 40px; height: 15px;" maxlength="3" size="3"> 10; // последняя цифра <br>
+                        &#160;n := n div 10; <br>
+                        &#160;while n > 0 do <input name="r18" type="text" onkeyup="testJump(this)" value="" style="width: 40px; height: 15px;" maxlength="5" size="5"> <br>
+                        <p style="text-indent: 20px; margin: 0px">b := n mod 10; </p>
+                        <p style="text-indent: 20px; margin: 0px">n := n div 10; </p>
+                        &#160;<input name="r19" type="text" onkeyup="testJump(this)" value="" style="width: 40px; height: 15px;" maxlength="3" size="3">; <br>
+                        &#160;writeln(a+b); <br>
+                        &#160;readln; <br>
+                        end.
+                    </div>  
+                    <center>
+                        <input name="Pcheck6" class="buttonCheck" onclick="Panswers6(this.form)" type="button" value="Проверить" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">    
+                        <input class="buttonNext" onclick="randPascal()" type="button" value="Далее" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                    </center>   
+                </form>
+            </div>          
+        </div>
+        <script src="jquery-3.2.1.js"></script>
+        <script src="testscript.js"></script>
+        
+        <script> //описание скриптов
+            //описание функции перехода на следующий input при заполении текущего
+            function testJump(x){
+                var ml = ~~x.getAttribute('maxlength');
+                if(ml && x.value.length >= ml){
+                    do{
+                        x = x.nextSibling;
+                    }
+                    while(x && !(/text/.test(x.type)));
+                    if(x && /text/.test(x.type)){
+                        x.focus();
+                    }
+                }
+            }
+            //описание рандомного отображения задания
+            
+            function shuffle(array) {
+                var i = array.length,
+                j = 0,
+                temp;
+                while (i--) {
+                    j = Math.floor(Math.random() * (i+1));
+                    // swap randomly chosen element with current element
+                    temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+                return array;
+            }
+
+            var random_numbers = [];
+            var variants1 = Array.from(document.querySelectorAll('.testfirst'));
+            
+            function randCplusInitialization(){
+                task_amount = variants1.length;
+                for(var i = 0; i < task_amount; i++) {
+                    random_numbers[i] = i;
+                }
+                random_numbers = shuffle(random_numbers);
+                randCplus();
+            }
+                        
+            
+            function randCplus() { 
+                if (!(random_numbers.length == 0)){
+                    variants1.forEach(div => div.classList.remove('visible'));
+                    variants1[random_numbers.pop()].classList.add('visible');
+                } else alert("Задания закончились. Выберите следующий тест");
+            
+            }
+            
+            var variants2 = Array.from(document.querySelectorAll('.testsecond'));
+
+            function randPascalInitialization(){
+                task_amount = variants2.length;
+                for(var i = 0; i < task_amount; i++) {
+                    random_numbers[i] = i;
+                }
+                random_numbers = shuffle(random_numbers);
+                randPascal();
+            }
+
+            
+
+            function randPascal() {
+                if (!(random_numbers.length == 0)){
+                    variants2.forEach(div => div.classList.remove('visible'));
+                    variants2[random_numbers.pop()].classList.add('visible');
+                } else alert("Задания закончились. Выберите следующий тест");
+            }
+
+            //описание функции проверки введенных данных 
+            function answers1(test1) {
+                (document.test1.q1.value == "for") ? (document.test1.q1.style.borderColor="green") : (document.test1.q1.style.borderColor="red");
+                (document.test1.q2.value == "1") ? (document.test1.q2.style.borderColor="green") : (document.test1.q2.style.borderColor="red");
+                (document.test1.q3.value == "100") ? (document.test1.q3.style.borderColor="green") : (document.test1.q3.style.borderColor="red");
+                }   
+            function answers2(test2) { 
+                (document.test2.q4.value == "n") ? (document.test2.q4.style.borderColor="green") : (document.test2.q4.style.borderColor="red");
+                (document.test2.q5.value == "n") ? (document.test2.q5.style.borderColor="green") : (document.test2.q5.style.borderColor="red");
+                (document.test2.q6.value == "0") ? (document.test2.q6.style.borderColor="green") : (document.test2.q6.style.borderColor="red");
+                (document.test2.q7.value == "++") ? (document.test2.q7.style.borderColor="green") : (document.test2.q7.style.borderColor="red");
+                (document.test2.q8.value == "count") ? (document.test2.q8.style.borderColor="green") : (document.test2.q8.style.borderColor="red");
+                }   
+            function answers3(test3) { 
+                ((document.test3.q9.value == "float") || (document.test3.q9.value == "double")) ? (document.test3.q9.style.borderColor="green") : (document.test3.q9.style.borderColor="red");
+                (document.test3.q10.value == "!=") ? (document.test3.q10.style.borderColor="green") : (document.test3.q10.style.borderColor="red");
+                (document.test3.q11.value == "!=") ? (document.test3.q11.style.borderColor="green") : (document.test3.q11.style.borderColor="red");
+                (document.test3.q12.value == "y") ? (document.test3.q12.style.borderColor="green") : (document.test3.q12.style.borderColor="red");
+                (document.test3.q13.value == "x") ? (document.test3.q13.style.borderColor="green") : (document.test3.q13.style.borderColor="red");
+                }
+            function answers4(test4) {
+                (document.test4.q14.value == "1") ? (document.test4.q14.style.borderColor="green") : (document.test4.q14.style.borderColor="red");
+                (document.test4.q15.value == "<<") ? (document.test4.q15.style.borderColor="green") : (document.test4.q15.style.borderColor="red");
+                (document.test4.q16.value == ">>") ? (document.test4.q16.style.borderColor="green") : (document.test4.q16.style.borderColor="red");
+                (document.test4.q17.value == "i<=n") ? (document.test4.q17.style.borderColor="green") : (document.test4.q17.style.borderColor="red");
+                (document.test4.q18.value == "<<") ? (document.test4.q18.style.borderColor="green") : (document.test4.q18.style.borderColor="red");
+                (document.test4.q19.value == "<<") ? (document.test4.q19.style.borderColor="green") : (document.test4.q19.style.borderColor="red");
+                (document.test4.q20.value == "<<") ? (document.test4.q20.style.borderColor="green") : (document.test4.q20.style.borderColor="red");
+                (document.test4.q21.value == "<<") ? (document.test4.q21.style.borderColor="green") : (document.test4.q21.style.borderColor="red");
+                }
+            function answers5(test5) {
+                (document.test5.q22.value == "do") ? (document.test5.q22.style.borderColor="green") : (document.test5.q22.style.borderColor="red");
+                (document.test5.q23.value == ">") ? (document.test5.q23.style.borderColor="green") : (document.test5.q23.style.borderColor="red");
+                (document.test5.q24.value == "max=n;") ? (document.test5.q24.style.borderColor="green") : (document.test5.q24.style.borderColor="red");
+                (document.test5.q25.value == "while") ? (document.test5.q25.style.borderColor="green") : (document.test5.q25.style.borderColor="red");
+                }
+            
+            function Panswers1(Ptest1) {
+                (document.Ptest1.r1.value == "1") ? (document.Ptest1.r1.style.borderColor="green") : (document.Ptest1.r1.style.borderColor="red");
+                (document.Ptest1.r2.value == "while") ? (document.Ptest2.r2.style.borderColor="green") :    (document.Ptest1.r2.style.borderColor="red");
+                (document.Ptest1.r3.value == "do") ? (document.Ptest1.r3.style.borderColor="green") : (document.Ptest1.r3.style.borderColor="red");
+                (document.Ptest1.r4.value == "end") ? (document.Ptest1.r4.style.borderColor="green") : (document.Ptest1.r4.style.borderColor="red");
+                }   
+            function Panswers2(Ptest2) {    
+                (document.Ptest2.r5.value == "read") ?  (document.Ptest2.r5.style.borderColor="green") : (document.Ptest2.r5.style.borderColor="red");
+                (document.Ptest2.r6.value == "for") ? (document.Ptest2.r6.style.borderColor="green") : (document.Ptest2.r6.style.borderColor="red");
+                (document.Ptest2.r7.value == "do") ? (document.Ptest2.r7.style.borderColor="green") : (document.Ptest2.r7.style.borderColor="red");
+                }   
+            function Panswers3(Ptest3) {    
+                (document.Ptest3.r8.value == "repeat") ? (document.Ptest3.r8.style.borderColor="green") : (document.Ptest3.r8.style.borderColor="red");
+                (document.Ptest3.r9.value == "sum+A") ? (document.Ptest3.r9.style.borderColor="green") :    (document.Ptest3.r9.style.borderColor="red");
+                (document.Ptest3.r10.value == "until") ? (document.Ptest3.r10.style.borderColor="green") : (document.Ptest3.r10.style.borderColor="red");
+                }   
+            function Panswers4(Ptest4) {
+                (document.Ptest4.r11.value == "for") ? (document.Ptest4.r11.style.borderColor="green") : (document.Ptest4.r11.style.borderColor="red");
+                (document.Ptest4.r12.value == "to") ? (document.Ptest4.r12.style.borderColor="green") : (document.Ptest4.r12.style.borderColor="red");
+                (document.Ptest4.r13.value == "do") ? (document.Ptest4.r13.style.borderColor="green") : (document.Ptest4.r13.style.borderColor="red");
+                }   
+            function Panswers5(Ptest5) {
+                (document.Ptest5.r13.value == "mod") ? (document.Ptest5.r13.style.borderColor="green") : (document.Ptest5.r13.style.borderColor="red");
+                (document.Ptest5.r14.value == "div") ? (document.Ptest5.r14.style.borderColor="green") : (document.Ptest5.r14.style.borderColor="red");
+                (document.Ptest5.r15.value == "mod") ? (document.Ptest5.r15.style.borderColor="green") : (document.Ptest5.r15.style.borderColor="red");
+                (document.Ptest5.r16.value == "div") ? (document.Ptest5.r16.style.borderColor="green") : (document.Ptest5.r16.style.borderColor="red");
+                }
+            function Panswers6(Ptest6) {
+                (document.Ptest6.r17.value == "mod") ? (document.Ptest6.r17.style.borderColor="green") : (document.Ptest6.r17.style.borderColor="red");
+                (document.Ptest6.r18.value == "begin") ? (document.Ptest6.r18.style.borderColor="green") : (document.Ptest6.r18.style.borderColor="red");
+                (document.Ptest6.r19.value == "end") ? (document.Ptest6.r19.style.borderColor="green") : (document.Ptest6.r19.style.borderColor="red");
+                }
+        </script>
+    {% elif practice.id == 2 %}
+        <script type="application/javascript">
+            //Here we can make new objects
+            //Now you can make rectangle, rounded rectangle, line, arrow and rhomb
+            //Constructors for this objects:
+            //rhomb conditionBlock(coordinates: x, y, width, height, inside text, height of text)
+            //arrow arrow(coordinates: x, y, width, height, inside text, height of text)
+            //rhomb conditionBlock(coordinates: x, y, width, height, inside text, height of text)
+
+            function task1() {
+              window.t1 = new CanvasState(document.getElementById('task1'));
+              var x, y, fig_height, fig_width, space, txt_size;
+              [x, y, fig_height, fig_width, space, txt_size] = t1.getConstants();
+
+              var task = new textBox(t1.width/2, fig_height, t1.width - space, "Необходимо совершить выход из цикла", txt_size)
+              var begin = new roundedRect(x, y, fig_width, fig_height, fig_height * 0.45, 1, 0, "Начало", txt_size);
+              var arrow1 = new arrow(begin.x + begin.width/2, begin.y + begin.height, 0, space);
+              var rect1 = new rect(begin.x, arrow1.y + arrow1.height, fig_width, fig_height, 0, 0, "i = 1", txt_size);
+              var arrow2 = new arrow(rect1.x + rect1.width/2, rect1.y + rect1.height, 0, space);
+              var condition = new conditionBlock(rect1.x, arrow2.y + arrow2.height, fig_width, fig_height, 0, 0, "i != 11", txt_size * 0.8);
+              var arrow3 = new arrow(condition.x + condition.width/2, condition.y + condition.height, 0, space, '+', txt_size);
+              var rect2 = new rect(condition.x, arrow3.y + arrow3.height, fig_width, fig_height, 1, 0, "i = i + 2", txt_size);
+              var b_aL1 = new broken_arrowLine(rect2.x + rect2.width/2, rect2.y + rect2.height, rect2.x + rect2.width/2, rect2.y + rect2.height + space * 0.3, rect2.x - space, rect2.y + rect2.height + space * 0.3, rect2.x - space, condition.y + condition.height/2, condition.x, condition.y + condition.height/2);
+              var line1 = new line(condition.x + condition.width, condition.y + condition.height/2, space, 0, '-', txt_size);
+              var b_aL2 = new broken_arrowLine(line1.x + line1.width, line1.y + line1.height, line1.x + line1.width, rect2.y + rect2.height + space, rect2.x + rect2.width/2, rect2.y + rect2.height + space, b_aL1.x, b_aL1.y + space * 2);
+              var end = new roundedRect(t1.width/4, b_aL1.y + space * 2, fig_width, fig_height, fig_height * 0.45, 0, 0, "Конец", txt_size);
+              
+                var trick1 = new roundedRect(0, 0, fig_width, fig_height, fig_height * 0.45, 1, 1, "Старт", txt_size);
+                var trick2 = new rect(0, 0, fig_width, fig_height, 1, 1, "i = i * 2", txt_size);
+                var trick3 = new rect(0, 0, fig_width, fig_height, 1, 1, "i = i + 3", txt_size);
+                var trick4 = new rect(0, 0, fig_width, fig_height, 1, 1, "i = i - 3", txt_size);
+                var trick5 = new roundedRect(0, 0, fig_width, fig_height, fig_height * 0.45, 1, 1, "Конец", txt_size);
+                var trick6 = new conditionBlock(0, 0, fig_width, fig_height, 1, 1, "i++", txt_size);
+              
+              t1.addShape(task);
+              t1.addShape(begin);
+              t1.addShape(trick2);
+              t1.addShape(trick3);
+              t1.addShape(arrow1);
+              t1.addShape(rect1);
+              t1.addShape(arrow2);
+              t1.addShape(condition);
+              t1.addShape(arrow3);
+              t1.addShape(rect2);
+              t1.addShape(trick1);
+              t1.addShape(trick5);
+              t1.addShape(trick4);
+              t1.addShape(b_aL1);
+              t1.addShape(line1);
+              t1.addShape(b_aL2);
+              t1.addShape(end);
+              t1.addShape(trick6);
+            }   
+            
+            function task2() {
+              window.t2 = new CanvasState(document.getElementById('task2'));
+              var x, y, fig_height, fig_width, space, txt_size;
+              [x, y, fig_height, fig_width, space, txt_size] = t2.getConstants();
+
+            var task = new textBox(t2.width/2, t2.height/16, t2.width - space, "Цикл должен совершить только 2 итерации", txt_size)
+            var begin = new roundedRect(x, y, fig_width, fig_height, fig_height * 0.45, 0, 0, "Начало", txt_size);
+            var arrow1 = new arrow(begin.x + begin.width/2, begin.y + begin.height, 0, space);
+            var rect1 = new rect(begin.x, arrow1.y + arrow1.height, fig_width, fig_height, 0, 0, "i = 8", txt_size);
+            var arrow2 = new arrow(rect1.x + rect1.width/2, rect1.y + rect1.height, 0, space);
+            var rect2 = new rect(rect1.x, arrow2.y + arrow2.height, fig_width, fig_height, 1, 0, "i = i - 4", txt_size);
+            var arrow3 = new arrow(rect2.x + rect2.width/2, rect2.y + rect2.height, 0, space);
+            var condition = new conditionBlock(rect2.x, arrow3.y + arrow3.height, fig_width, fig_height, 0, 0, "i", txt_size * 0.8);
+            var line1 = new line(condition.x, condition.y + condition.height/2, - space, 0, '+', txt_size)
+            var b_aL1 = new broken_arrowLine(condition.x - space, condition.y + condition.height/2, condition.x - space, arrow2.y + arrow2.height/2, arrow2.x, arrow2.y + arrow2.height/2);
+            var arrow4 = new arrow(condition.x + condition.width/2, condition.y + condition.height, 0, space, '-', txt_size);
+            var end = new roundedRect(t2.width/4, arrow4.y + arrow4.height, fig_width, fig_height, fig_height * 0.45, 1, 0, "Конец", txt_size);
+              
+              var trick1 = new roundedRect(0, 0, fig_width, fig_height, fig_height * 0.45, 1, 1, "Старт", txt_size);
+              var trick2 = new rect(0, 0, fig_width, fig_height, 1, 1, "i = i - 2", txt_size);
+              var trick3 = new rect(0, 0, fig_width, fig_height, 1, 1, "i = i % 2", txt_size);
+              var trick4 = new rect(0, 0, fig_width, fig_height, 1, 1, "i = i % 3", txt_size);
+              var trick5 = new roundedRect(0, 0, fig_width, fig_height, fig_height * 0.45, 1, 1, "Финиш", txt_size);
+              var trick6 = new conditionBlock(0, 0, fig_width, fig_height, 1, 1, "i = 2", txt_size);
+              
+              t2.addShape(task);
+              t2.addShape(begin);
+              t2.addShape(trick2);
+              t2.addShape(trick3);
+              t2.addShape(arrow1);
+              t2.addShape(rect1);
+              t2.addShape(arrow2);
+              t2.addShape(rect2);
+              t2.addShape(arrow3);
+              t2.addShape(condition);
+              t2.addShape(line1);
+              t2.addShape(b_aL1);
+              t2.addShape(arrow4);
+              t2.addShape(trick1);
+              t2.addShape(trick5);
+              t2.addShape(trick4);
+              t2.addShape(end);
+              t2.addShape(trick6);
+            }
+
+
+          function task3() {
+              window.t3 = new CanvasState(document.getElementById('task3'));
+              var x, y, fig_height, fig_width, space, txt_size;
+              [x, y, fig_height, fig_width, space, txt_size] = t3.getConstants();
+
+            var task = new textBox(t3.width/2, t3.height/16, t3.width - space, "Необходимо вывести четные числа", txt_size)
+            var begin = new roundedRect(x, y, fig_width, fig_height, fig_height * 0.45, 1, 0, "Начало", txt_size);
+            var arrow1 = new arrow(begin.x + begin.width/2, begin.y + begin.height, 0, space);
+            var condition = new hexBlock(arrow1.x - begin.width/2 - space * 0.3, arrow1.y + arrow1.height, fig_width + space * 0.7, fig_height, 0, 0, "i=1;i<13;i++", txt_size * 0.8);
+            var arrow2 = new arrow(condition.x + condition.width/2, condition.y + condition.height, 0, space, '+', txt_size);
+            var output = new ioBlock(arrow2.x - (fig_width)/2, arrow2.y + arrow2.height, fig_width, fig_height, 1, 0, "i++", txt_size);
+            var b_l1 = new broken_line(output.x + output.width/2, output.y + output.height, output.x + output.width/2, output.y + output.height + space, condition.x - space, output.y + output.height + space, condition.x - space, condition.y + condition.height/2);
+            var arrow3 = new arrow(condition.x - space, condition.y + condition.height/2, space, 0);
+            var line1 = new line(condition.x + condition.width, condition.y + condition.height/2, space, 0, '-', txt_size);
+            var b_aL1 = new broken_arrowLine(line1.x + line1.width, line1.y, line1.x + line1.width,b_l1.y + space + space * 0.3, b_l1.x, b_l1.y + space + space * 0.3, b_l1.x, b_l1.y + space * 2);
+            var end = new roundedRect(t3.width/4, b_l1.y + space * 2, fig_width, fig_height, fig_height * 0.45, 0, 0, "Конец", txt_size);
+            
+            var trick1 = new ioBlock(0, 0, fig_width, fig_height, 1, 1, "i%2", txt_size);
+            var trick2 = new rect(0, 0, fig_width, fig_height, 1, 1, "i = i * 2", txt_size);
+            var trick3 = new rect(0, 0, fig_width, fig_height, 1, 1, "i = i + 3", txt_size);
+            var trick4 = new rect(0, 0, fig_width, fig_height, 1, 1, "i - 3", txt_size);
+            var trick5 = new roundedRect(0, 0, fig_width, fig_height, fig_height * 0.45, 1, 1, "Старт", txt_size);
+            var trick6 = new conditionBlock(0, 0, fig_width, fig_height, 1, 1, "i++", txt_size);
+            
+            t3.addShape(task);
+            t3.addShape(begin);
+            t3.addShape(trick2);
+            t3.addShape(trick3);
+            t3.addShape(arrow1);
+            t3.addShape(condition);
+            t3.addShape(arrow2);
+            t3.addShape(output);
+            t3.addShape(b_l1);
+            t3.addShape(arrow3);
+            t3.addShape(trick1);
+            t3.addShape(trick5);
+            t3.addShape(trick4);
+            t3.addShape(line1);
+            t3.addShape(b_aL1);
+            t3.addShape(end);
+            t3.addShape(trick6);
+          }
+          
+          function task4() {
+              window.   t4 = new CanvasState(document.getElementById('task'));
+              var x, y, fig_height, fig_width, space, txt_size;
+              [x, y, fig_height, fig_width, space, txt_size] = t4.getConstants();
+
+            var task = new textBox(t2.width/2, t2.height/16, t2.width - space, "Цикл должен совершить только 2 итерации", txt_size)
+            var begin = new roundedRect(x, y, fig_width, fig_height, fig_height * 0.45, 0, 0, "Начало", txt_size);
+            var arrow1 = new arrow(begin.x + begin.width/2, begin.y + begin.height, 0, space);
+            var rect1 = new rect(begin.x, arrow1.y + arrow1.height, fig_width, fig_height, 0, 0, "i = 8", txt_size);
+            var arrow2 = new arrow(rect1.x + rect1.width/2, rect1.y + rect1.height, 0, space);
+            var rect2 = new rect(rect1.x, arrow2.y + arrow2.height, fig_width, fig_height, 1, 0, "i = i - 4", txt_size);
+            var arrow3 = new arrow(rect2.x + rect2.width/2, rect2.y + rect2.height, 0, space);
+            var condition = new conditionBlock(rect2.x, arrow3.y + arrow3.height, fig_width, fig_height, 0, 0, "i", 11);
+              var line1 = new line(condition.x, condition.y + condition.height/2, - space, 0, '+', txt_size)
+            var b_aL1 = new broken_arrowLine(condition.x - space, condition.y + condition.height/2, condition.x - space, arrow2.y + arrow2.height/2, arrow2.x, arrow2.y + arrow2.height/2);
+            var arrow4 = new arrow(condition.x + condition.width/2, condition.y + condition.height, 0, space, '-', txt_size);
+            var end = new roundedRect(t2.width/4, arrow4.y + arrow4.height, fig_width, fig_height, fig_height * 0.45, 1, 0, "Конец", txt_size);
+              
+            var trick1 = new roundedRect(0, 0, fig_width, fig_height, fig_height * 0.45, 1, 1, "Старт", txt_size);
+            var trick2 = new rect(0, 0, fig_width, fig_height, 1, 1, "i = i - 2", txt_size);
+            var trick3 = new rect(0, 0, fig_width, fig_height, 1, 1, "i = i % 2", txt_size);
+            var trick4 = new rect(0, 0, fig_width, fig_height, 1, 1, "i = i % 3", txt_size);
+            var trick5 = new roundedRect(0, 0, fig_width, fig_height, fig_height * 0.45, 1, 1, "Финиш", txt_size);
+            var trick6 = new conditionBlock(0, 0, fig_width, fig_height, 1, 1, "i = 2", txt_size);
+            
+            t2.addShape(task);
+            t2.addShape(begin);
+            t2.addShape(trick2);
+            t2.addShape(trick3);
+            t2.addShape(arrow1);
+            t2.addShape(rect1);
+            t2.addShape(arrow2);
+            t2.addShape(rect2);
+            t2.addShape(arrow3);
+            t2.addShape(condition);
+            t2.addShape(line1);
+            t2.addShape(b_aL1);
+            t2.addShape(arrow4);
+            t2.addShape(trick1);
+            t2.addShape(trick5);
+            t2.addShape(trick4);
+            t2.addShape(end);
+            t2.addShape(trick6);
+          }
+
+          window.task = 1
+          function nextTask() {
+              if (task != 3) {
+                if (task == 1) {
+                    document.getElementById('t1').classList.remove('visible');
+                    document.getElementById('t2').classList.add('visible');
+                    task++;
+                } else {
+                    document.getElementById('t2').classList.remove('visible');
+                    document.getElementById('t3').classList.add('visible');
+                    task++;
+                }
+              }
+          }
+          function prevTask() {
+              if (task != 1) {
+                if (task == 3) {
+                    document.getElementById('t3').classList.remove('visible');
+                    document.getElementById('t2').classList.add('visible');
+                    task--;
+                } else {
+                    document.getElementById('t2').classList.remove('visible');
+                    document.getElementById('t1').classList.add('visible');
+                    task--;
+                }
+              }
+          }
+
+        </script>
+        <form id="block-test" class="test_form" onload="task1(); task2(); task3();">
+            <div class="blocktest" id="t1"><canvas id="task1" width="500" height="500"></canvas></div>
+            <div class="blocktest" id="t2"><canvas id="task2" width="500" height="500"></canvas></div>  
+            <div class="blocktest" id="t3"><canvas id="task3" width="500" height="500"></canvas></div>
+            <center>    
+                <input class="buttonPrev" onclick="prevTask()" type="button" value="Пред." style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+                <input class="buttonNext" onclick="nextTask()" type="button" value="Далее" style="font: 18px 'Lucida Sans'; border-radius: 2px; ">
+            </center> 
+        </form>
+    {% endif %}
+{% endblock content %}

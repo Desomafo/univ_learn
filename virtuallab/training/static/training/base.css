@@ -1,0 +1,112 @@
+h1 a:hover {
+    text-decoration: none;
+}
+
+.navbar-default .navbar-brand {
+    color: #fff;
+    font-size: 20px;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:active {
+    color: #afe0ff;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:active {
+    color: #afe0ff;
+    background-color: transparent;
+}
+
+.navbar-default {
+    background-color: #05396a;
+    min-height: 70px;
+    font-size: 16px;
+    margin-bottom: 0px;
+    border-width: 0px;
+    border-radius: 0px; 
+}
+
+#navigation {
+    padding-top: 10px;
+}
+
+
+
+.content {
+    display: block !important;
+    margin: 0px;
+    padding: 0 4% 0 0;
+    background-color: #f8f8f8;
+}
+
+.main {
+    float: left;
+    width: 67%;
+    background-color: #fff;
+    min-height: 500px;
+}
+
+.sidebar {
+    float: right !important;
+    width: 30%;
+    margin-top: 20px;
+    margin-left: 3%;
+    text-align: left;
+    padding: 0;
+}
+
+.sidebar h2 {
+    border-bottom-style: solid;
+    border-bottom-width: 0.94px !important;
+    border-color: #afe0ff;
+}
+
+.banner-header {
+    float: left;
+}
+
+.banner-image {
+    float: right;
+    background-image: url('images/usptu-transp.png');
+    background-color: transparent;
+    background-size: 100% 100%;
+    background-size: cover;
+    height: 69px;
+    width: 120px;
+    clear: right;
+}
+
+.copy-banner {
+    background-color: #05396aba;
+    color: #afe0ff;
+    padding-right: 0;
+}
+
+.sidebar-image {
+    background-image: url('images/usptu-front.png');
+    background-color: transparent;
+    background-size: 100% 100%;
+    background-position: 50% 100%;
+    background-size: cover;
+    float: right;
+    width: 30%;
+    height: 101px;
+    position: sticky;
+    top: 20px;
+}
+
+.footer {
+    background-color: #05396a;
+    color: #afe0ff;
+}
+
+.footer>ul>li {
+    display: inline;
+}

@@ -1,0 +1,17 @@
+{% extends "training/base.html" %}
+
+{% block header %}
+    <h1>Теория</h1>
+{% endblock header %}
+
+{% block content %}
+    <ul>
+        {% regroup articles by topic as topic_list %}
+        {% for topic in topic_list %}
+            <h3>{{ topic.grouper }}</h3>
+            {% for article in topic.list %}
+                <li><h4><a href="{% url 'training:theory_detail' article.id %}">{{article.name}}</a></h4></li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+{% endblock content %}
